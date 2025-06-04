@@ -43,7 +43,15 @@ This repository contains a comprehensive set of Kubernetes manifest files design
 
 ## 🛠️ Prerequisites
    Kubernetes cluster (e.g., Minikube, Kind, EKS, GKE)
-   
    kubectl CLI installed
-   
    (Optional) helm for chart-based deployments
+
+## 📌 Notes
+   All YAML files are tested on Kubernetes v1.27+
+   Recommended to explore in order for a structured learning experience
+   Real-world examples included to build confidence in production setups
+
+## 📚 References
+   Kubernetes Official Docs
+   Helm Documentation
+   
