@@ -35,3 +35,8 @@ This repository contains a comprehensive set of Kubernetes manifest files design
    ```bash
    git clone https://github.com/<your-username>/<your-repo-name>.git
    cd <your-repo-name>
+2. **Apply a manifest file**
+   ```bash
+   kubectl apply -f <path-to-yaml>
+3. **Explore by folder**
+   Navigate to any topic folder and explore different manifest examples related to that concept.
