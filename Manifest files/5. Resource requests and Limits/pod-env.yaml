@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: environment                # Name of the Pod
+spec:
+  containers:
+    - name: nginx                  # Container running NGINX
+      image: nginx
+      env:                         # Hardcoded environment variables
+        - name: COURSE
+          value: "AWS DevOps"
+        - name: TRAINER
+          value: "Madhu Kiran"
+        - name: INSTITUTE
+          value: "Mind Circuit Pvt Ltd"
+
+#These values are hardcoded directly in the Pod spec (not externalized via ConfigMap or Secret).
+#kubectl apply -f pod-env.yaml
+#kubectl get po
+#kubectl exec -it environment -- bash
+#env -> Displays variables
+#kubectl describe po environment -> Inspect pod details, shows environment variables including sensitive data

@@ -1,0 +1,21 @@
+---
+apiVersion: v1 
+kind: Service #Declares that this is a Service resource.
+metadata:
+  name: fb-lb-svc #The name of the service.
+  labels:
+    app: facebook #Labels for identifying the service, used by selectors and for organization.
+spec:
+  type: LoadBalancer #Exposes the service externally using a cloud provider’s load balancer.
+  ports:
+    - port: 80 # Exposes port 80 on the load balancer.
+      targetPort: 8080 #Forwards traffic to containers' port 8080
+  selector:
+    app: facebook #Routes traffic to pods with label app: facebook
+
+
+#kubectl apply -f loadbalancer_svc.yaml
+#kubectl get svc -> Shows fb-lb-svc service with an EXTERNAL-IP
+
+
+      

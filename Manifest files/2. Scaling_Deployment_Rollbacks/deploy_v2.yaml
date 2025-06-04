@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fb-deploy               # Deployment name (same as v1)
+  labels:
+    app: facebook               # App label for grouping
+    env: lab                   # Environment label
+spec:
+  selector:
+    matchLabels:
+      app: facebook             # Select Pods with this label
+  strategy:
+    type: RollingUpdate         # Rolling update strategy for zero downtime
+    rollingUpdate:
+      maxSurge: 1               # Allow 1 extra Pod during update
+      maxUnavailable: 0         # No Pods should be unavailable during update
+  template:
+    metadata:
+      name: fb-rs
+      labels:
+        app: facebook
+        env: lab
+        Version: VC_v2          # New version label for v2 rollout
+    spec:
+      containers:
+        - name: fbcont
+          image: devopshubg333/batch15d:python_flaskapp  # Updated image for v2
+          ports:
+            - containerPort: 8080                         # Exposes container port 8080
+
+
+#kubectl apply -f deploy_v1.yaml
+#kubectl get deploy
+#kubectl get all
+#kubectl describe deploy fb-deploy
+
+#Rollback to previous version:
+# kubectl rollout undo deploy fb-deploy
+#kubectl get po --watch
+#kubectl get all
+

@@ -1,0 +1,39 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fb-deploy  # Name of the Deployment
+  labels:
+    app: facebook  # Label used for identifying the app
+    env: lab       # Label indicating environment
+spec:
+  selector:
+    matchLabels:
+      app: facebook  # Selector matches Pods with this label
+  replicas: 3         # Maintain 3 replicas (Pods) at all times
+  strategy:
+    type: RollingUpdate  # Strategy to update Pods gradually with zero downtime
+    rollingUpdate:
+      maxSurge: 1         # Allow 1 extra Pod during update
+      maxUnavailable: 0   # Do not allow any unavailable Pods during update
+  template:
+    metadata:
+      name: fb-rs
+      labels:
+        app: facebook       # Pod label for matching and grouping
+        env: lab
+        Version: AC_v1      # Version label for tracking releases 
+    spec:
+      containers:
+        - name: fbcont
+          image: devopshubg333/batch15d:mcfbapp  # Custom application container
+          ports:
+            - containerPort: 8080                # App exposed on port 8080
+
+
+
+#kubectl apply -f deploy_v1.yaml
+#kubectl get deploy
+#kubectl get all
+
+    

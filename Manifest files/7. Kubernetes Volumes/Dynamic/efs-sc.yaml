@@ -1,0 +1,10 @@
+apiVersion: v1 
+kind: StorageClass
+metadata:
+  name: efs-sc
+provisioner: efs.csi.aws.com
+parameters:
+  provsioningMode: efs-ap
+  fileSystemId: fs-068cd78ee2dc4ffa8
+  directoryPerms: "700"
+  basePath: "/facebook"

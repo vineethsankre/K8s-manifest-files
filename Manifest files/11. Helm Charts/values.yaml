@@ -1,0 +1,9 @@
+
+deployment: 
+  replicas: 3
+  imageversion: pyhttpd_amazonlinxthon_flaskapp
+
+service:
+  nodeport: 32222
+
+

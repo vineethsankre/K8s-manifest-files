@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fb-deploy
+  labels:
+    app: facebook
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: facebook
+  template:
+    metadata:
+      name: fbpod
+      labels:
+        app: facebook
+    spec:
+      nodeName: ip-192-168-19-203.ec2.internal
+      containers:
+        - name: fbcont1
+          image: nginx

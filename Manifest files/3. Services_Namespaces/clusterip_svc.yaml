@@ -1,0 +1,18 @@
+---
+apiVersion: v1 
+kind: Service
+metadata:
+  name: fb-cip-svc
+  labels:
+    app: facebook
+spec:
+  type: ClusterIP  #Default service type; exposes the service only inside the cluster.
+  ports:
+    - port: 80  #Service listens on port 80.
+      targetPort: 8080  #Forwards traffic to container's port 8080.
+  selector:
+    app: facebook  #Forwards traffic to pods with label app: facebook.
+
+#kubectl apply -f clusterip_svc.yaml
+#kubectl get svc -> Shows fb-cip-svc service with a ClusterIP(Ex: 10.x.x.x)
+

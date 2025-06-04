@@ -1,0 +1,12 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: fbpod
+  labels:
+    app: facebook
+    env: lab
+spec:
+  containers:
+    - name: fbcont1
+      image: devopshubg333/batch15d:mcfbapp

@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: fb-rs
+  labels:
+    app: facebook
+    env: lab
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: facebook
+  template:
+    metadata:
+      name: fb-rs
+      labels:
+        app: facebook
+        env: lab
+    spec:
+      containers:
+        - name: fbcont
+          image: devopshubg333/batch15d:mcfbapp
+        - name: tomcatcont
+          image: tomcat
+
+
+#ReplicaSet: fb-rs
+#Creates 3 Pods, each running:
+# fbcont: Custom app container (devopshubg333/batch15d:mcfbapp)
+# tomcatcont: Tomcat server container
+#Ensures Pods have labels: app: facebook, env: lab
+#Maintains 3 replicas at all times — auto-recreates Pods if they fail.
+#Pods share the same network & storage (if defined) since both containers run in a single Pod.

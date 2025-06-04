@@ -1,0 +1,33 @@
+apiVersion: v1 
+kind: Pod
+metadata:
+  name: fb-pod
+  labels:
+    app: facebook
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: env
+            operator: In
+            values:
+            - prod
+      preferredDuringSchedulingIgnoredDuringExecution:
+      - weight: 100
+        preference:
+          matchExpressions:
+          - key: topology.kubernetes.io/zone
+            operator: In
+            values:
+            - us-east-1a
+  tolerations:
+    - key: "critical"
+      operator: "Equal"
+      value: "true"
+      effect: "NoSchedule"
+  containers:
+  - name: dbcont
+    image: postgres:latest
+  
