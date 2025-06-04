@@ -42,8 +42,8 @@ This repository contains a comprehensive set of Kubernetes manifest files design
    Navigate to any topic folder and explore different manifest examples related to that concept.
 
 ## 🛠️ Prerequisites
-Kubernetes cluster (e.g., Minikube, Kind, EKS, GKE)
-
-kubectl CLI installed
-
-(Optional) helm for chart-based deployments
+   Kubernetes cluster (e.g., Minikube, Kind, EKS, GKE)
+   
+   kubectl CLI installed
+   
+   (Optional) helm for chart-based deployments
