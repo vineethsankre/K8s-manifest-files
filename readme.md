@@ -50,5 +50,3 @@ This repository contains a comprehensive set of Kubernetes manifest files design
    All YAML files are tested on Kubernetes v1.27+
    Recommended to explore in order for a structured learning experience
    Real-world examples included to build confidence in production setups
-
-Local change
