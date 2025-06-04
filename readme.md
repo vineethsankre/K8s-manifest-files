@@ -40,3 +40,10 @@ This repository contains a comprehensive set of Kubernetes manifest files design
    kubectl apply -f <path-to-yaml>
 3. **Explore by folder**
    Navigate to any topic folder and explore different manifest examples related to that concept.
+
+## 🛠️ Prerequisites
+Kubernetes cluster (e.g., Minikube, Kind, EKS, GKE)
+
+kubectl CLI installed
+
+(Optional) helm for chart-based deployments
