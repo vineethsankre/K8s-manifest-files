@@ -28,3 +28,10 @@ This repository contains a comprehensive set of Kubernetes manifest files design
 11. Helm Charts/ # Helm-based deployment management
 
 12. Advance Scheduling Mechanism/ # Taints, tolerations, affinities, and node selectors
+
+## 🧩 Usage
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/<your-username>/<your-repo-name>.git
+   cd <your-repo-name>
