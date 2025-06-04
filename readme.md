@@ -51,4 +51,3 @@ This repository contains a comprehensive set of Kubernetes manifest files design
    Recommended to explore in order for a structured learning experience
    Real-world examples included to build confidence in production setups
 
-   Local change
